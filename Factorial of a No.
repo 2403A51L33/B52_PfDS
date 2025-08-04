@@ -1,0 +1,64 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOJAolJsB8z3m801FE4OiRe",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/2403A51L33/B52_PfDS/blob/main/Factorial%20of%20a%20No.\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZHCmnkLSToyz",
+        "outputId": "1d003cc1-23d2-4c10-f7db-7d5c23dd1c7a"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a numver:5\n",
+            "The factorial of 5 is 120\n"
+          ]
+        }
+      ],
+      "source": [
+        "def factorial(n):\n",
+        "  if n==0 or n==1:\n",
+        "     return 1\n",
+        "  else:\n",
+        "     return n * factorial(n-1)\n",
+        "number = int(input(\"Enter a numver:\"))\n",
+        "if number < 0:\n",
+        "   print(\"Factorial is not defined for negative numbers.\")\n",
+        "else:\n",
+        "  result = factorial(number)\n",
+        "  print(f\"The factorial of {number} is {result}\")\n"
+      ]
+    }
+  ]
+}
