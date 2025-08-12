@@ -1,0 +1,82 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN6Ap++F6a40XHR9dHdDFVE",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/2403A51L33/B52_PfDS/blob/main/Fact%20(6)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yy76U2sk8ZyQ",
+        "outputId": "64950885-0f42-4b06-bd35-5f0a6a98b34d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Recursion limit: 1000\n",
+            "Enter n: 5\n",
+            "Recursive: 120\n",
+            "Iterative: 120\n"
+          ]
+        }
+      ],
+      "source": [
+        "import sys\n",
+        "def fact_rec(n):\n",
+        "    if n == 0 or n == 1:\n",
+        "        return 1\n",
+        "    return n * fact_rec(n - 1)\n",
+        "\n",
+        "def fact_iter(n):\n",
+        "    result = 1\n",
+        "    for i in range(2, n + 1):\n",
+        "        result *= i\n",
+        "    return result\n",
+        "\n",
+        "print(\"Recursion limit:\", sys.getrecursionlimit())\n",
+        "\n",
+        "n = int(input(\"Enter n: \"))\n",
+        "\n",
+        "if n < 0:\n",
+        "    print(\"No factorial for negative numbers!\")\n",
+        "elif n > 998:\n",
+        "    print(\"Too big for recursion! Using iterative method...\")\n",
+        "    print(\"Factorial:\", fact_iter(n))\n",
+        "else:\n",
+        "    try:\n",
+        "        print(\"Recursive:\", fact_rec(n))\n",
+        "    except RecursionError:\n",
+        "        print(\"Recursion error!\")\n",
+        "    print(\"Iterative:\", fact_iter(n))\n"
+      ]
+    }
+  ]
+}
