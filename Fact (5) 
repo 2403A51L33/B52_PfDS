@@ -1,0 +1,86 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNOcb+D0WiyDoSkVGTsZ5+X",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/2403A51L33/B52_PfDS/blob/main/Fact%20(5)%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jVrhB9CG7vo2",
+        "outputId": "c133b2ec-3ef2-40ba-9752-64d8897eeadc"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter total number of people/items (n): 5\n",
+            "Enter number of places to arrange (r): 4\n",
+            "Step 1: Formula: nPr = n! / (n-r)!\n",
+            "Step 2: Substituting values: 5P4 = 5! / (5-4)!\n",
+            "Step 3: 5P4 = 120 / 1\n",
+            "Step 4: 5P4 = 120 arrangements\n",
+            "\n",
+            " Final Answer: 5P4 = 120 arrangements\n"
+          ]
+        }
+      ],
+      "source": [
+        "def factorial(n):\n",
+        "    if n == 0 or n == 1:\n",
+        "        return 1\n",
+        "    else:\n",
+        "        return n * factorial(n - 1)\n",
+        "def permutations(n, r):\n",
+        "    return factorial(n) // factorial(n - r)\n",
+        "def permutation_breakdown(n, r):\n",
+        "    print(f\"Step 1: Formula: nPr = n! / (n-r)!\")\n",
+        "    print(f\"Step 2: Substituting values: {n}P{r} = {n}! / ({n}-{r})!\")\n",
+        "    print(f\"Step 3: {n}P{r} = {factorial(n)} / {factorial(n - r)}\")\n",
+        "    print(f\"Step 4: {n}P{r} = {permutations(n, r)} arrangements\")\n",
+        "    return permutations(n, r)\n",
+        "try:\n",
+        "    n = int(input(\"Enter total number of people/items (n): \"))\n",
+        "    r = int(input(\"Enter number of places to arrange (r): \"))\n",
+        "\n",
+        "    if n < 0 or r < 0:\n",
+        "        print(\"Error: n and r must be non-negative.\")\n",
+        "    elif n < r:\n",
+        "        print(\"Error: n must be greater than or equal to r.\")\n",
+        "    else:\n",
+        "        result = permutation_breakdown(n, r)\n",
+        "        print(f\"\\n Final Answer: {n}P{r} = {result} arrangements\")\n",
+        "except ValueError:\n",
+        "    print(\"Error: Please enter valid integers.\")\n",
+        ""
+      ]
+    }
+  ]
+}
