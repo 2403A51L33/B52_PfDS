@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNmsOYCRryADxLqqrY8wzVN",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/2403A51L33/B52_PfDS/blob/main/Lab-01--04%20Assignment(1)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XuoZEom8YOnU",
+        "outputId": "f8864bae-e21b-490b-82e3-8666ef625d83"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Permutations using Recursive Factorial\n",
+            "Enter total number of people/items (n): 10\n",
+            "Enter number of places (r): 5\n",
+            "10P5 = 30240\n"
+          ]
+        }
+      ],
+      "source": [
+        "def factorial(n):\n",
+        "    if n == 0 or n == 1:\n",
+        "        return 1\n",
+        "    else:\n",
+        "        return n * factorial(n - 1)\n",
+        "def permutations(n, r):\n",
+        "    if n < r:\n",
+        "        return None\n",
+        "    return factorial(n) // factorial(n - r)\n",
+        "print(\"Permutations using Recursive Factorial\")\n",
+        "n = int(input(\"Enter total number of people/items (n): \"))\n",
+        "r = int(input(\"Enter number of places (r): \"))\n",
+        "if n >= r:\n",
+        "    result = permutations(n, r)\n",
+        "    print(f\"{n}P{r} = {result}\")\n",
+        "else:\n",
+        "    print(\"Invalid input! (n must be greater than or equal to r)\")\n"
+      ]
+    }
+  ]
+}
